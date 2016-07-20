@@ -1,7 +1,5 @@
 # angular-es6
 
-Was originally generated using yeoman's [fountainjs](http://fountainjs.io/) 
-
 ## Prerequisites
 
 Make sure you have globally installed latest versions of [NodeJS](https://nodejs.org):

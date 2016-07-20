@@ -5,9 +5,9 @@ import 'angular-ui-router';
 import routesConfig from './routes';
 
 import {main} from './app/main';
-import {header} from './app/header';
-import {title} from './app/title';
-import {footer} from './app/footer';
+import {header} from './app/components/header/header';
+import {title} from './app/components/title/title';
+import {footer} from './app/components/footer/footer';
 
 import './index.scss';
 
