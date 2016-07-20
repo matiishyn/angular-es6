@@ -9,13 +9,13 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   module: {
-    preLoaders: [
+    /*preLoaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'eslint'
       }
-    ],
+    ],*/
 
     loaders: [
       {
@@ -35,6 +35,20 @@ module.exports = {
           'ng-annotate',
           'babel'
         ]
+      },
+      // Loader to importing HTML file and using it as template
+      {
+        test: /\.html$/,
+        loader: "html"
+      },
+      // loading fonts
+      {
+        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "url?limit=10000"
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+        loader: 'file'
       }
     ]
   },
