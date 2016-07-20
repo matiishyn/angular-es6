@@ -1,11 +1,15 @@
 # angular-es6
 
-Was originally generated using [fountainjs](http://fountainjs.io/) 
+Was originally generated using yeoman's [fountainjs](http://fountainjs.io/) 
 
 ## Prerequisites
 
+Make sure you have globally installed latest versions of [NodeJS](https://nodejs.org):
+* Node 4+
+* NPM 3+
+
 Make sure you have globally installed latest versions of such NPM modules:
-* gulp (gulp-cli)
+* Gulp 4
 * webpack
 
 Run `npm install` to download all dependencies
