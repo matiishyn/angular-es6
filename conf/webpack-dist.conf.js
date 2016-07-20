@@ -9,6 +9,7 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   module: {
+    // First configure ESLINTER and then uncomment
     /*preLoaders: [
       {
         test: /\.js$/,
