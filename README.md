@@ -103,6 +103,36 @@ angular.module('myApp', [ childModule ])
 ```
 
 
+### Bootstrap
+
+We will be using [UI Bootstrap][ui.bt] from AngularUI Team. 
+This module requires **Bootstrap CSS**. Here're several ways to get it:
+ 
+#### 1. [bootstrap-loader](https://github.com/shakacode/bootstrap-loader)
+
+This variant seems most legit in combination with Webpack, but current 
+version requires Bootstrap's JS files and jQuery. We don't need those since
+we are planning to use **UI Bootstrap**
+
+#### 2. import Bootstrap CSS
+
+This can be the simplest way to get Bootstrap styling:
+ 
+```js
+import 'bootstrap/dist/css/bootstrap.css' // will get styles directly from node_modules
+```
+
+#### 3. import Bootstrap SASS
+
+This variant is **recommended** and will be used.
+
+Here's a [file](src/assets/bootstrap/_bootstrap.scss) where we import all
+Bootstrap modules separately. This gives us more flexibility like overwriting
+variables or create custom theming based on existing layouts. (e.g. [file](src/assets/bootstrap/_overwrites.scss))
+
+
+
 
 
 [wp]: https://webpack.github.io/
+[ui.bt]: https://angular-ui.github.io/bootstrap/
