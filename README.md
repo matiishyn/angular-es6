@@ -130,7 +130,9 @@ Here's a [file](src/assets/bootstrap/_bootstrap.scss) where we import all
 Bootstrap modules separately. This gives us more flexibility like overwriting
 variables or create custom theming based on existing layouts. (e.g. [file](src/assets/bootstrap/_overwrites.scss))
 
+### [CSS Modules](https://github.com/css-modules/css-modules)
 
+tbd
 
 
 
