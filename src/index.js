@@ -13,7 +13,8 @@ import {header} from './app/components/header/header';
 import {title} from './app/components/title/title';
 import {footer} from './app/components/footer/footer';
 
-import './index.scss';
+import styles from  './index.scss';
+console.log('app index.scss styles:', styles);
 
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -23,4 +24,9 @@ angular
     .component('app', main)
     .component('fountainHeader', header)
     .component('fountainTitle', title)
-    .component('fountainFooter', footer);
+    .component('fountainFooter', footer)
+
+
+    .run(['$rootScope', ($rootScope) => {
+        $rootScope.globalStyles = styles;
+    }]);
