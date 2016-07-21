@@ -84,7 +84,7 @@ module.exports = {
   },
   entry: {
     app: [
-      `./${conf.path.src('index')}`,
+      `./${conf.path.src('app/index')}`,
       `./${conf.path.tmp('templateCacheHtml.js')}`
     ]
   }

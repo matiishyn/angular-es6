@@ -1,3 +1,8 @@
+// TODO
+// this file is left original,
+// before using it make sure to add all loaders here
+
+
 module.exports = {
   module: {
     preLoaders: [

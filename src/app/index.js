@@ -4,14 +4,14 @@ import ngAnimate from 'angular-animate'
 import ngTouch from 'angular-touch'
 import uiBootstrap from 'angular-ui-bootstrap';
 
-import {techsModule} from './app/techs/index';
+import {techsModule} from './techs/index';
 
 import routesConfig from './routes';
 
-import {main} from './app/main';
-import {header} from './app/components/header/header';
-import {title} from './app/components/title/title';
-import {footer} from './app/components/footer/footer';
+import {main} from './main';
+import {header} from './components/header/header';
+import {title} from './components/title/title';
+import {footer} from './components/footer/footer';
 
 import styles from  './index.scss';
 console.log('app index.scss styles:', styles);
