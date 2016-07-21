@@ -68,5 +68,41 @@ A recommendation is to use second variant. If you are sure that first variant is
 you may also remove Gulp's `partials` task in order to get rid of unused templates.
 
 
+### Modules
+#### External modules
+
+```js
+import ngAnimate from 'angular-animate'   // variant 1
+import 'angular-ui-router'                // variant 2
+
+angular.module('myApp', [ngAnimate, 'ui.router'])
+```
+
+Using **variant 2** you'll need to know the exact name of the imported module (e.g.`ui.router`) 
+to include it as a dependency to your application. 
+**variant 1** doesn't need that, you may use a variable here.
+ 
+**variant 1** is recommended
+
+#### Internal modules
+
+`child-module.js`:
+
+```js
+export const childModule = 'childModule';
+
+angular.module(childModule, [])
+```
+
+`parent-module.js`:
+
+```js
+import {childModule} from './child-module';
+
+angular.module('myApp', [ childModule ])
+```
+
+
+
 
 [wp]: https://webpack.github.io/
