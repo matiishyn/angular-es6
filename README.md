@@ -1,8 +1,8 @@
-## What is this?
+# What is this?
 This is a starter kit for `AngularJS 1.5.x` & `ES6` application.
 
-## Installation and usage
-### Prerequisites
+# Installation and usage
+## Prerequisites
 
 Make sure you have globally installed latest versions of [NodeJS](https://nodejs.org):
 * Node 4+
@@ -12,25 +12,25 @@ Make sure you have globally installed latest versions of such NPM modules:
 * Gulp 4
 * webpack
 
-### Install
+## Install
 Run `npm install` to download all dependencies
 
-### Usage - Development
+## Usage - Development
 Run `npm run serve` to start watcher and local server. Follow console messages.
 
 In case of error, make sure you have latest version of Gulp installed
 
 
-### Usage - Production
+## Usage - Production
 Run `npm run build` to compile and minify all files. Find them in `/dist` folder.
 
-## AngularJS 1.x & ES6 & Module bundler (Webpack):
+# AngularJS 1.x & ES6 & Module bundler (Webpack):
 
 In this section we'll described some specific techniques using the combination
 of `AngularJS 1.x` and `ES6` and `Webpack (or any other module bundler)`
  
-### Templates
-#### 1. using absolute path to html file
+## Templates
+### 1. using absolute path to html file
 ```js
 let myComponent = {
     templateUrl: 'app/components/myComponent/myComponent.html'
@@ -39,7 +39,7 @@ let myComponent = {
 
 in this case the `buld` task will place all templates into `$templateCache`
 
-#### 2. importing html file and inserting inline
+### 2. importing html file and inserting inline
 ```js
 import template from './footer.html'
 
@@ -68,8 +68,8 @@ A recommendation is to use second variant. If you are sure that first variant is
 you may also remove Gulp's `partials` task in order to get rid of unused templates.
 
 
-### Modules
-#### External modules
+## Modules
+### External modules
 
 ```js
 import ngAnimate from 'angular-animate'   // variant 1
@@ -84,7 +84,7 @@ to include it as a dependency to your application.
  
 **variant 1** is recommended
 
-#### Internal modules
+### Internal modules
 
 `child-module.js`:
 
@@ -103,18 +103,18 @@ angular.module('myApp', [ childModule ])
 ```
 
 
-### Bootstrap
+## Bootstrap
 
 We will be using [UI Bootstrap][ui.bt] from AngularUI Team. 
 This module requires **Bootstrap CSS**. Here're several ways to get it:
  
-#### 1. [bootstrap-loader](https://github.com/shakacode/bootstrap-loader)
+### 1. [bootstrap-loader](https://github.com/shakacode/bootstrap-loader)
 
 This variant seems most legit in combination with Webpack, but current 
 version requires Bootstrap's JS files and jQuery. We don't need those since
 we are planning to use **UI Bootstrap**
 
-#### 2. import Bootstrap CSS
+### 2. import Bootstrap CSS
 
 This can be the simplest way to get Bootstrap styling:
  
@@ -122,7 +122,7 @@ This can be the simplest way to get Bootstrap styling:
 import 'bootstrap/dist/css/bootstrap.css' // will get styles directly from node_modules
 ```
 
-#### 3. import Bootstrap SASS
+### 3. import Bootstrap SASS
 
 This variant is **recommended** and will be used.
 
@@ -130,11 +130,11 @@ Here's a [file](src/assets/bootstrap/_bootstrap.scss) where we import all
 Bootstrap modules separately. This gives us more flexibility like overwriting
 variables or create custom theming based on existing layouts. (e.g. [file](src/assets/bootstrap/_overwrites.scss))
 
-### [CSS Modules](https://github.com/css-modules/css-modules)
+## [CSS Modules](https://github.com/css-modules/css-modules)
 
 Done, will be described 
 
-### File structure / Component architecture
+## File structure / Component architecture
 
 tbd
 
