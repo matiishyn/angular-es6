@@ -18,8 +18,17 @@ module.exports = {
                 test: /\.(css|scss)$/,
                 loaders: [
                     'style',
-                    // 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
                     'css',
+                    'sass',
+                    'postcss'
+                ]
+            },
+            // CSS modules
+            {
+                test: /\.(mcss)$/,
+                loaders: [
+                    'style',
+                    'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
                     'sass',
                     'postcss'
                 ]

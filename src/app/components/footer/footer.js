@@ -1,5 +1,5 @@
 import template from './footer.html'
-import styles from './footer.mod.scss'
+import styles from './footer.mcss'
 
 
 console.log(styles);
