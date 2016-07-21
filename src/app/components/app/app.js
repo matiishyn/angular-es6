@@ -1,9 +1,5 @@
-import template from './footer.html'
-
-import styles from './footer.mcss'
-
-
-console.log(styles);
+import template from './app.html'
+import styles from './style.mcss'
 
 class controller {
     /** @ngInject */
@@ -12,7 +8,7 @@ class controller {
     }
 }
 
-export const footer = {
+export const app = {
     template,
     controller
 };
