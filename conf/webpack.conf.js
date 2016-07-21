@@ -25,7 +25,7 @@ module.exports = {
             },
             // CSS modules
             {
-                test: /\.(mcss)$/,
+                test: /\.(mcss)$/, // .module.scss / mod.scss
                 loaders: [
                     'style',
                     'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
