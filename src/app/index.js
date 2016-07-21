@@ -5,6 +5,7 @@ import ngTouch from 'angular-touch'
 import uiBootstrap from 'angular-ui-bootstrap';
 
 import {componentsModule} from './components';
+import {commonModule} from './common';
 
 import routesConfig from './routes';
 
@@ -17,6 +18,7 @@ angular
         uiRouter, ngAnimate, ngTouch, uiBootstrap,
 
         // modules
-        componentsModule
+        componentsModule,
+        commonModule
     ])
     .config(routesConfig);

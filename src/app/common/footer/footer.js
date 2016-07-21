@@ -1,4 +1,4 @@
-import template from './app.html'
+import template from './footer.html'
 import styles from './styles.mcss'
 
 class controller {
