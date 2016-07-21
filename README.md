@@ -1,13 +1,5 @@
 # angular-es6
 
-## todo
-### 1. Load Bootstrap styles
-Currently we have `import 'bootstrap/dist/css/bootstrap.css'`
-
-Try to use [bootstrap-loader](https://github.com/shakacode/bootstrap-loader).
-Currently this module requires `jquery` which is not good.
-
-
 ## Prerequisites
 
 Make sure you have globally installed latest versions of [NodeJS](https://nodejs.org):
