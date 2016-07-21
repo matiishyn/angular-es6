@@ -30,6 +30,14 @@ module.exports = {
         loaders: ExtractTextPlugin.extract('style', 'css?minimize!sass', 'postcss')
       },
       {
+        test: /\.(mcss)$/,
+        loaders: ExtractTextPlugin.extract(
+            'style',
+            'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&minimize',
+            'sass',
+            'postcss')
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         loaders: [
