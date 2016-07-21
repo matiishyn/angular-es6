@@ -132,6 +132,10 @@ variables or create custom theming based on existing layouts. (e.g. [file](src/a
 
 ### [CSS Modules](https://github.com/css-modules/css-modules)
 
+Done, will be described 
+
+### File structure / Component architecture
+
 tbd
 
 
