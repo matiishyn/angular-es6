@@ -1,3 +1,6 @@
+## What is this?
+This is a starter kit for `AngularJS 1.5.x` & `ES6` application.
+
 ## Prerequisites
 
 Make sure you have globally installed latest versions of [NodeJS](https://nodejs.org):
