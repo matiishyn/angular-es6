@@ -14,6 +14,7 @@ module.exports = {
                     'json'
                 ]
             },
+            // Global styles
             {
                 test: /\.(css|scss)$/,
                 loaders: [

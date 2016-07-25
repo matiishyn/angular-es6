@@ -152,11 +152,30 @@ but only module specific classes, like this:
 <div class=col-md-6 ng-class="styles.myModuleClass"></div>
 ```
 
-
+To achieve this result we should somehow distinguish style files that should 
+be applied globally and modular. Here's how it can be done using **Webpack**:
+```js
+loaders: [
+    ...,
+    // Global styles
+    { 
+        test: /\.(css|scss)$/,
+        loaders: ['style','css','sass','postcss']
+    },
+    // CSS modules
+    {
+        test: /\.(mcss)$/, // .module.scss / mod.scss
+        loaders: [
+            'style',
+            'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+            'sass','postcss'
+        ]
+    },
+```
 
 ## File structure / Component architecture
 
-tbd
+https://github.com/toddmotto/angular-styleguide
 
 
 
