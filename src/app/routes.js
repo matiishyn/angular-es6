@@ -18,5 +18,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
             url: 'dashboard',
             template: '<dashboard></dashboard>'
         })
+        .state('app.techs', {
+            url: 'techs',
+            template: '<fountain-techs></fountain-techs>'
+        })
 
 }

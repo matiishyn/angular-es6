@@ -1,0 +1,8 @@
+<div ng-class="$ctrl.styles['techs-container']" >
+  <h2 class="techs-h2">
+    Cooked with all these awesome technologies:
+  </h2>
+  <div ng-class="$ctrl.styles['techs']" >
+    <fountain-tech ng-repeat="tech in $ctrl.techs" tech="tech"></fountain-tech>
+  </div>
+</div>

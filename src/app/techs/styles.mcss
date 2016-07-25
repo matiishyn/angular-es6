@@ -1,0 +1,12 @@
+.techs-container {
+  .techs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.myPanel {
+  width: 250px;
+  margin: 5px;
+  text-align: center;
+}

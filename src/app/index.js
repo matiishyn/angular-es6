@@ -6,6 +6,7 @@ import uiBootstrap from 'angular-ui-bootstrap';
 
 import {componentsModule} from './components';
 import {commonModule} from './common';
+import {techsModule} from './techs'
 
 import routesConfig from './routes';
 
@@ -19,6 +20,7 @@ angular
 
         // modules
         componentsModule,
-        commonModule
+        commonModule,
+        techsModule
     ])
     .config(routesConfig);
