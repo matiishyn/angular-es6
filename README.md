@@ -108,13 +108,13 @@ angular.module('myApp', [ childModule ])
 We will be using [UI Bootstrap][ui.bt] from AngularUI Team. 
 This module requires **Bootstrap CSS**. Here're several ways to get it:
  
-### 1. [bootstrap-loader](https://github.com/shakacode/bootstrap-loader)
+#### 1. [bootstrap-loader](https://github.com/shakacode/bootstrap-loader)
 
 This variant seems most legit in combination with Webpack, but current 
 version requires Bootstrap's JS files and jQuery. We don't need those since
 we are planning to use **UI Bootstrap**
 
-### 2. import Bootstrap CSS
+#### 2. import Bootstrap CSS
 
 This can be the simplest way to get Bootstrap styling:
  
@@ -122,7 +122,7 @@ This can be the simplest way to get Bootstrap styling:
 import 'bootstrap/dist/css/bootstrap.css' // will get styles directly from node_modules
 ```
 
-### 3. import Bootstrap SASS
+#### 3. import Bootstrap SASS
 
 This variant is **recommended** and will be used.
 
@@ -130,9 +130,29 @@ Here's a [file](src/assets/bootstrap/_bootstrap.scss) where we import all
 Bootstrap modules separately. This gives us more flexibility like overwriting
 variables or create custom theming based on existing layouts. (e.g. [file](src/assets/bootstrap/_overwrites.scss))
 
-## [CSS Modules](https://github.com/css-modules/css-modules)
+## CSS Modules
+[Link](https://github.com/css-modules/css-modules)
 
-Done, will be described 
+After applying **CSS Modules** all styles will come modularized by default.
+And we don't need it because of several reasons:
+
+* some AngularJS modules come with predefined global styles and modularization 
+of which can just disable them
+
+* it's easier to have some styles globally.
+e.g. we don't want to have all Bootstrap's classes as a module, like this:
+
+```html
+<div ng-class="styles['col-md-6']"></div>
+```
+
+but only module specific classes, like this:
+
+```html
+<div class=col-md-6 ng-class="styles.myModuleClass"></div>
+```
+
+
 
 ## File structure / Component architecture
 
