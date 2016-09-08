@@ -29,6 +29,12 @@ module.exports = {
         ]
       },
       {
+        test: /.html$/,
+        loaders: [
+          'html'
+        ]
+      },
+      {
         test: /\.js$/,
         exclude: /(node_modules|.*\.spec\.js)/,
         loader: 'isparta'
