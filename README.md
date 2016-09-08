@@ -28,18 +28,10 @@ Run `npm run build` to compile and minify all files. Find them in `/dist` folder
 
 In this section we'll described some specific techniques using the combination
 of `AngularJS 1.x` and `ES6` and `Webpack (or any other module bundler)`
- 
+
 ## Templates
-### 1. using absolute path to html file
-```js
-let myComponent = {
-    templateUrl: 'app/components/myComponent/myComponent.html'
-}
-```
 
-in this case the `buld` task will place all templates into `$templateCache`
-
-### 2. importing html file and inserting inline
+### importing html file and inserting inline
 ```js
 import template from './footer.html'
 
@@ -48,7 +40,7 @@ let myComponent = {
 }
 ```
 
-in this case template will be paste HTML inline. To make [Webpack][wp] import `html` files we've added a 
+in this case template will be paste HTML inline. To make [Webpack][wp] import `html` files we've added a
 [`html-loader`](https://github.com/webpack/html-loader). And here's how Webpack's
 configuration would look like:
 ```js
@@ -78,10 +70,10 @@ import 'angular-ui-router'                // variant 2
 angular.module('myApp', [ngAnimate, 'ui.router'])
 ```
 
-Using **variant 2** you'll need to know the exact name of the imported module (e.g.`ui.router`) 
-to include it as a dependency to your application. 
+Using **variant 2** you'll need to know the exact name of the imported module (e.g.`ui.router`)
+to include it as a dependency to your application.
 **variant 1** doesn't need that, you may use a variable here.
- 
+
 **variant 1** is recommended
 
 ### Internal modules
@@ -105,19 +97,19 @@ angular.module('myApp', [ childModule ])
 
 ## Bootstrap
 
-We will be using [UI Bootstrap][ui.bt] from AngularUI Team. 
+We will be using [UI Bootstrap][ui.bt] from AngularUI Team.
 This module requires **Bootstrap CSS**. Here're several ways to get it:
- 
+
 #### 1. [bootstrap-loader](https://github.com/shakacode/bootstrap-loader)
 
-This variant seems most legit in combination with Webpack, but current 
+This variant seems most legit in combination with Webpack, but current
 version requires Bootstrap's JS files and jQuery. We don't need those since
 we are planning to use **UI Bootstrap**
 
 #### 2. import Bootstrap CSS
 
 This can be the simplest way to get Bootstrap styling:
- 
+
 ```js
 import 'bootstrap/dist/css/bootstrap.css' // will get styles directly from node_modules
 ```
@@ -136,7 +128,7 @@ variables or create custom theming based on existing layouts. (e.g. [file](src/a
 After applying **CSS Modules** all styles will come modularized by default.
 And we don't need it because of several reasons:
 
-* some AngularJS modules come with predefined global styles and modularization 
+* some AngularJS modules come with predefined global styles and modularization
 of which can just disable them
 
 * it's easier to have some styles globally.
@@ -152,13 +144,13 @@ but only module specific classes, like this:
 <div class=col-md-6 ng-class="styles.myModuleClass"></div>
 ```
 
-To achieve this result we should somehow distinguish style files that should 
+To achieve this result we should somehow distinguish style files that should
 be applied globally and modular. Here's how it can be done using **Webpack**:
 ```js
 loaders: [
     ...,
     // Global styles
-    { 
+    {
         test: /\.(css|scss)$/,
         loaders: ['style','css','sass','postcss']
     },
