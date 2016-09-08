@@ -1,10 +1,11 @@
 {
   "generator-fountain-angular1": {
-    "version": "0.6.0",
+    "version": "0.7.2",
     "props": {
       "framework": "angular1",
       "modules": "webpack",
       "js": "babel",
+      "ci": [],
       "css": "scss",
       "resolved": "C:\\Users\\imatiyshin\\AppData\\Roaming\\npm\\node_modules\\generator-fountain-webapp\\node_modules\\generator-fountain-angular1\\generators\\app\\index.js",
       "namespace": "fountain-angular1",
@@ -13,8 +14,6 @@
         "cooked": [],
         "original": []
       },
-      "skip-cache": false,
-      "skip-install": false,
       "sample": "techs",
       "router": "uirouter"
     }

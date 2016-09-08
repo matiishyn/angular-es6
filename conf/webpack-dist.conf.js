@@ -3,20 +3,20 @@ const conf = require('./gulp.conf');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const SplitByPathPlugin = require('webpack-split-by-path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const pkg = require('../package.json');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
   module: {
     // First configure ESLINTER and then uncomment
     /*preLoaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint'
-      }
-    ],*/
+     {
+     test: /\.js$/,
+     exclude: /node_modules/,
+     loader: 'eslint'
+     }
+     ],*/
 
     loaders: [
       {
@@ -27,15 +27,17 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        loaders: ExtractTextPlugin.extract('style', 'css?minimize!sass', 'postcss')
+        loaders: ExtractTextPlugin.extract({
+          fallbackLoader: 'style',
+          loader: 'css?minimize!sass!postcss'
+        })
       },
       {
         test: /\.(mcss)$/,
-        loaders: ExtractTextPlugin.extract(
-            'style',
-            'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&minimize',
-            'sass',
-            'postcss')
+        loaders: ExtractTextPlugin.extract({
+          fallbackLoader: 'style',
+          loader: 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&minimize!sass!postcss',
+        })
       },
       {
         test: /\.js$/,
@@ -45,10 +47,11 @@ module.exports = {
           'babel'
         ]
       },
-      // Loader to importing HTML file and using it as template
       {
-        test: /\.html$/,
-        loader: "html"
+        test: /.html$/,
+        loaders: [
+          'html'
+        ]
       },
       // loading fonts
       {
@@ -71,11 +74,7 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {unused: true, dead_code: true} // eslint-disable-line camelcase
     }),
-    new SplitByPathPlugin([{
-      name: 'vendor',
-      path: path.join(__dirname, '../node_modules')
-    }]),
-    new ExtractTextPlugin('/index-[contenthash].css')
+    new ExtractTextPlugin('index-[contenthash].css')
   ],
   postcss: () => [autoprefixer],
   output: {
@@ -83,9 +82,7 @@ module.exports = {
     filename: '[name]-[hash].js'
   },
   entry: {
-    app: [
-      `./${conf.path.src('app/index')}`,
-      `./${conf.path.tmp('templateCacheHtml.js')}`
-    ]
+    app: `./${conf.path.src('index')}`,
+    vendor: Object.keys(pkg.dependencies)
   }
 };
